@@ -1,25 +1,23 @@
-<svg width="1180" height="610" viewBox="0 0 1180 610" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1180" height="920" viewBox="0 0 1180 920" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
   <style>
     text { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
-    .pill:hover .pillbg { filter: url(#pillGlowHover); }
   </style>
 
-  <!-- ============ CLIPS ============ -->
-  <clipPath id="canvasClip"><rect x="0" y="0" width="1180" height="610" rx="26"/></clipPath>
-  <clipPath id="leftPanelClip"><rect x="26" y="26" width="404" height="558" rx="20"/></clipPath>
-  <clipPath id="rightPanelClip"><rect x="452" y="26" width="702" height="558" rx="20"/></clipPath>
+  <clipPath id="canvasClip"><rect x="0" y="0" width="1180" height="920" rx="26"/></clipPath>
+  <clipPath id="leftPanelClip"><rect x="26" y="26" width="404" height="868" rx="20"/></clipPath>
+  <clipPath id="rightPanelClip"><rect x="452" y="26" width="702" height="868" rx="20"/></clipPath>
+  <clipPath id="photoFrameClip"><rect x="78" y="90" width="300" height="300" rx="28"/></clipPath>
 
-  <!-- ============ BACKGROUND GRADIENTS ============ -->
-  <radialGradient id="bgGlowPurple" cx="15%" cy="10%" r="55%">
+  <radialGradient id="bgGlowPurple" cx="15%" cy="8%" r="55%">
     <stop offset="0%" stop-color="#2563EB" stop-opacity="0.10"/>
     <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
   </radialGradient>
-  <radialGradient id="bgGlowCyan" cx="90%" cy="20%" r="50%">
+  <radialGradient id="bgGlowCyan" cx="90%" cy="16%" r="50%">
     <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.08"/>
     <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
   </radialGradient>
-  <radialGradient id="bgGlowEmerald" cx="70%" cy="95%" r="50%">
+  <radialGradient id="bgGlowEmerald" cx="70%" cy="97%" r="50%">
     <stop offset="0%" stop-color="#10B981" stop-opacity="0.06"/>
     <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
   </radialGradient>
@@ -29,7 +27,6 @@
     <stop offset="100%" stop-color="#E9EEF5" stop-opacity="0.92"/>
   </linearGradient>
 
-  <!-- Border shimmer -->
   <linearGradient id="borderShimmer" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="#2563EB" stop-opacity="0"/>
     <stop offset="45%" stop-color="#06B6D4" stop-opacity="0.9"/>
@@ -38,27 +35,12 @@
     <animateTransform attributeName="gradientTransform" type="translate" from="-1200 0" to="1200 0" dur="6s" repeatCount="indefinite"/>
   </linearGradient>
 
-  <!-- Accent text gradient -->
   <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="#2563EB"/>
     <stop offset="50%" stop-color="#06B6D4"/>
     <stop offset="100%" stop-color="#10B981"/>
   </linearGradient>
 
-  <!-- ASCII animated gradient -->
-  <linearGradient id="asciiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="#06B6D4">
-      <animate attributeName="stop-color" values="#06B6D4;#2563EB;#06B6D4" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="50%" stop-color="#38BDF8">
-      <animate attributeName="stop-color" values="#38BDF8;#06B6D4;#38BDF8" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="100%" stop-color="#2563EB">
-      <animate attributeName="stop-color" values="#2563EB;#10B981;#2563EB" dur="5s" repeatCount="indefinite"/>
-    </stop>
-  </linearGradient>
-
-  <!-- Glass reflection -->
   <linearGradient id="glassReflect" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
     <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.10"/>
@@ -70,143 +52,133 @@
     <stop offset="100%" stop-color="#F1F5F9"/>
   </radialGradient>
 
-  <!-- ============ FILTERS ============ -->
+  <linearGradient id="heatFill" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#06B6D4"/>
+    <stop offset="100%" stop-color="#2563EB"/>
+  </linearGradient>
+
+  <radialGradient id="photoPlaceholderGrad" cx="50%" cy="35%" r="70%">
+    <stop offset="0%" stop-color="#0F172A" stop-opacity="0.55"/>
+    <stop offset="100%" stop-color="#E9EEF5" stop-opacity="0.75"/>
+  </radialGradient>
+
   <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
     <feGaussianBlur stdDeviation="4" result="blur"/>
-    <feMerge>
-      <feMergeNode in="blur"/>
-      <feMergeNode in="SourceGraphic"/>
-    </feMerge>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-
   <filter id="strongGlow" x="-80%" y="-80%" width="260%" height="260%">
     <feGaussianBlur stdDeviation="7" result="blur"/>
-    <feMerge>
-      <feMergeNode in="blur"/>
-      <feMergeNode in="blur"/>
-      <feMergeNode in="SourceGraphic"/>
-    </feMerge>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-
-  <filter id="pillGlowHover" x="-80%" y="-80%" width="260%" height="260%">
-    <feGaussianBlur stdDeviation="6"/>
-  </filter>
-
   <filter id="noiseFilter">
     <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise"/>
     <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.02 0"/>
   </filter>
-
-  <filter id="blurBackdrop" x="-20%" y="-20%" width="140%" height="140%">
-    <feGaussianBlur stdDeviation="0.4"/>
-  </filter>
 </defs>
 
-<!-- ============ CANVAS ============ -->
 <g clip-path="url(#canvasClip)">
-  <rect x="0" y="0" width="1180" height="610" fill="#FFFFFF"/>
-  <rect x="0" y="0" width="1180" height="610" fill="url(#bgGlowPurple)">
-    <animate attributeName="opacity" values="0.7;1;0.7" dur="7s" repeatCount="indefinite"/>
-  </rect>
-  <rect x="0" y="0" width="1180" height="610" fill="url(#bgGlowCyan)">
-    <animate attributeName="opacity" values="1;0.6;1" dur="8s" repeatCount="indefinite"/>
-  </rect>
-  <rect x="0" y="0" width="1180" height="610" fill="url(#bgGlowEmerald)">
-    <animate attributeName="opacity" values="0.6;1;0.6" dur="9s" repeatCount="indefinite"/>
-  </rect>
-  <rect x="0" y="0" width="1180" height="610" filter="url(#noiseFilter)" opacity="0.5"/>
+  <rect x="0" y="0" width="1180" height="920" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1180" height="920" fill="url(#bgGlowPurple)"><animate attributeName="opacity" values="0.7;1;0.7" dur="7s" repeatCount="indefinite"/></rect>
+  <rect x="0" y="0" width="1180" height="920" fill="url(#bgGlowCyan)"><animate attributeName="opacity" values="1;0.6;1" dur="8s" repeatCount="indefinite"/></rect>
+  <rect x="0" y="0" width="1180" height="920" fill="url(#bgGlowEmerald)"><animate attributeName="opacity" values="0.6;1;0.6" dur="9s" repeatCount="indefinite"/></rect>
+  <rect x="0" y="0" width="1180" height="920" filter="url(#noiseFilter)" opacity="0.5"/>
 
-  <!-- floating particles -->
   <g fill="#06B6D4">
-    <circle cx="120" cy="500" r="1.6" opacity="0.6"><animate attributeName="cy" values="500;60;500" dur="14s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0" dur="14s" repeatCount="indefinite"/></circle>
-    <circle cx="360" cy="560" r="1.2" opacity="0.5" fill="#2563EB"><animate attributeName="cy" values="560;40;560" dur="17s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="17s" repeatCount="indefinite"/></circle>
-    <circle cx="900" cy="540" r="1.4" fill="#10B981"><animate attributeName="cy" values="540;80;540" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="12s" repeatCount="indefinite"/></circle>
-    <circle cx="1050" cy="500" r="1.1" fill="#06B6D4"><animate attributeName="cy" values="500;30;500" dur="15.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="15.5s" repeatCount="indefinite"/></circle>
-    <circle cx="700" cy="580" r="1.3" fill="#38BDF8"><animate attributeName="cy" values="580;50;580" dur="19s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="19s" repeatCount="indefinite"/></circle>
-    <circle cx="200" cy="120" r="1.1" fill="#06B6D4"><animate attributeName="cy" values="120;480;120" dur="16s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="16s" repeatCount="indefinite"/></circle>
+    <circle cx="120" cy="760" r="1.6" opacity="0.6"><animate attributeName="cy" values="760;60;760" dur="15s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0" dur="15s" repeatCount="indefinite"/></circle>
+    <circle cx="360" cy="820" r="1.2" opacity="0.5" fill="#2563EB"><animate attributeName="cy" values="820;40;820" dur="18s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="18s" repeatCount="indefinite"/></circle>
+    <circle cx="900" cy="800" r="1.4" fill="#10B981"><animate attributeName="cy" values="800;80;800" dur="13s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="13s" repeatCount="indefinite"/></circle>
+    <circle cx="1050" cy="760" r="1.1" fill="#06B6D4"><animate attributeName="cy" values="760;30;760" dur="16.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="16.5s" repeatCount="indefinite"/></circle>
+    <circle cx="700" cy="840" r="1.3" fill="#38BDF8"><animate attributeName="cy" values="840;50;840" dur="20s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="20s" repeatCount="indefinite"/></circle>
+    <circle cx="200" cy="120" r="1.1" fill="#06B6D4"><animate attributeName="cy" values="120;700;120" dur="17s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="17s" repeatCount="indefinite"/></circle>
   </g>
 
-  <!-- outer border shimmer -->
-  <rect x="1" y="1" width="1178" height="608" rx="25" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
-  <rect x="1" y="1" width="1178" height="608" rx="25" fill="none" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+  <rect x="1" y="1" width="1178" height="918" rx="25" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
+  <rect x="1" y="1" width="1178" height="918" rx="25" fill="none" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
 
-  <!-- ================= LEFT PANEL : ASCII PORTRAIT ================= -->
+  <!-- ================= LEFT PANEL ================= -->
   <g>
-    <rect x="26" y="26" width="404" height="558" rx="20" fill="url(#panelFill)" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
-    <rect x="26" y="26" width="404" height="558" rx="20" fill="url(#glassReflect)"/>
+    <rect x="26" y="26" width="404" height="868" rx="20" fill="url(#panelFill)" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+    <rect x="26" y="26" width="404" height="868" rx="20" fill="url(#glassReflect)"/>
 
     <g clip-path="url(#leftPanelClip)">
-      <!-- scanline sweep -->
-      <rect x="26" y="26" width="404" height="6" fill="#06B6D4" opacity="0.12">
-        <animate attributeName="y" values="26;576;26" dur="5s" repeatCount="indefinite"/>
-      </rect>
+      <rect x="26" y="26" width="404" height="6" fill="#06B6D4" opacity="0.12"><animate attributeName="y" values="26;886;26" dur="6s" repeatCount="indefinite"/></rect>
 
-      <!-- floating ascii group -->
-      <g transform="translate(228,150)">
-        <animateTransform attributeName="transform" type="translate" values="228,150;228,142;228,150" dur="6s" repeatCount="indefinite" additive="sum"/>
-        <g font-size="13.2" font-weight="600" fill="url(#asciiGrad)" filter="url(#softGlow)" text-anchor="middle" letter-spacing="1">
-          <text x="0" y="0"       opacity="0"><tspan>      .-''''''-.</tspan><animate attributeName="opacity" to="1" begin="0.0s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="20"      opacity="0"><tspan>    .'          '.</tspan><animate attributeName="opacity" to="1" begin="0.25s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="40"      opacity="0"><tspan>   /   ⬤       ⬤  \</tspan><animate attributeName="opacity" to="1" begin="0.50s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="60"      opacity="0"><tspan>  |                 |</tspan><animate attributeName="opacity" to="1" begin="0.75s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="80"      opacity="0"><tspan>  |    \______/     |</tspan><animate attributeName="opacity" to="1" begin="1.00s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="100"     opacity="0"><tspan>   \              /</tspan><animate attributeName="opacity" to="1" begin="1.25s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="120"     opacity="0"><tspan>    '.          .'</tspan><animate attributeName="opacity" to="1" begin="1.50s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="140"     opacity="0"><tspan>      '-......-'</tspan><animate attributeName="opacity" to="1" begin="1.75s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="160"     opacity="0"><tspan>     .-'|    |'-.</tspan><animate attributeName="opacity" to="1" begin="2.00s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="180"     opacity="0"><tspan>    /   |    |   \</tspan><animate attributeName="opacity" to="1" begin="2.25s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="200"     opacity="0"><tspan>   |    | PY |    |</tspan><animate attributeName="opacity" to="1" begin="2.50s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="220"     opacity="0"><tspan>   |    | ML |    |</tspan><animate attributeName="opacity" to="1" begin="2.75s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="240"     opacity="0"><tspan>    \   |____|   /</tspan><animate attributeName="opacity" to="1" begin="3.00s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="260"     opacity="0"><tspan>     '-.      .-'</tspan><animate attributeName="opacity" to="1" begin="3.25s" dur="0.4s" fill="freeze"/></text>
-          <text x="0" y="280"     opacity="0"><tspan>        '----'</tspan><animate attributeName="opacity" to="1" begin="3.50s" dur="0.4s" fill="freeze"/></text>
+      <!-- PHOTO PLACEHOLDER — replace this <g id="photoSlot"> with your own <image> to add a picture -->
+      <g id="photoSlot">
+        <rect x="78" y="90" width="300" height="300" rx="28" fill="url(#photoPlaceholderGrad)" stroke="url(#accentGrad)" stroke-width="1.2" stroke-dasharray="6 7" opacity="0.85"/>
+        <g transform="translate(228,220)" opacity="0.30" stroke="#475569" stroke-width="2" fill="none">
+          <circle cx="0" cy="-18" r="34"/>
+          <path d="M-58,72 a58,50 0 0 1 116,0 z"/>
+        </g>
+        <text x="228" y="356" font-size="11" letter-spacing="2" fill="#475569" opacity="0.55" text-anchor="middle">ADD YOUR PHOTO HERE</text>
+        <g opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.15;0.5" dur="3.4s" repeatCount="indefinite"/>
+          <rect x="198" y="90" width="60" height="2" fill="#06B6D4"/>
         </g>
       </g>
 
-      <!-- blinking cursor beneath ascii -->
-      <rect x="215" y="298" width="10" height="16" fill="#06B6D4" filter="url(#softGlow)" opacity="0">
-        <animate attributeName="opacity" to="1" begin="3.8s" dur="0.1s" fill="freeze"/>
-        <animate attributeName="opacity" values="1;0;1" begin="3.8s" dur="1s" repeatCount="indefinite"/>
-      </rect>
-
-      <!-- name plate -->
-      <g transform="translate(228,368)" text-anchor="middle" opacity="0">
-        <animate attributeName="opacity" to="1" begin="4.0s" dur="0.6s" fill="freeze"/>
-        <text x="0" y="0" font-size="19" font-weight="700" fill="#0F172A" letter-spacing="0.5">Purna Tejeshwara Reddy</text>
+      <g transform="translate(228,430)" text-anchor="middle" opacity="0">
+        <animate attributeName="opacity" to="1" begin="0.3s" dur="0.6s" fill="freeze"/>
+        <text x="0" y="0" font-size="20" font-weight="700" fill="#0F172A" letter-spacing="0.4">Purna Tejeshwara Reddy</text>
         <text x="0" y="26" font-size="12.5" fill="url(#accentGrad)" letter-spacing="2">&lt; AI / CV / FULL-STACK /&gt;</text>
       </g>
 
-      <!-- divider -->
-      <line x1="76" y1="404" x2="380" y2="404" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0">
-        <animate attributeName="opacity" to="1" begin="4.3s" dur="0.5s" fill="freeze"/>
-      </line>
+      <line x1="76" y1="464" x2="380" y2="464" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0"><animate attributeName="opacity" to="1" begin="0.6s" dur="0.5s" fill="freeze"/></line>
 
-      <!-- status row -->
-      <g transform="translate(228,436)" text-anchor="middle" opacity="0">
-        <animate attributeName="opacity" to="1" begin="4.5s" dur="0.6s" fill="freeze"/>
-        <circle cx="-58" cy="-4" r="4" fill="#10B981">
-          <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/>
-        </circle>
-        <text x="-46" y="0" font-size="12" fill="#475569" text-anchor="start">Building &amp; shipping projects</text>
+      <g transform="translate(228,494)" text-anchor="middle" opacity="0">
+        <animate attributeName="opacity" to="1" begin="0.8s" dur="0.6s" fill="freeze"/>
+        <circle cx="-64" cy="-4" r="4" fill="#10B981"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>
+        <text x="-52" y="0" font-size="12" fill="#475569" text-anchor="start">Building &amp; shipping projects</text>
       </g>
 
-      <!-- corner brackets -->
+      <text x="228" y="534" font-size="12" font-style="italic" fill="#475569" text-anchor="middle" opacity="0">
+        <animate attributeName="opacity" to="0.85" begin="1.0s" dur="0.6s" fill="freeze"/>
+        "Turning ideas into deployable systems."
+      </text>
+
+      <!-- STATS — placeholder numbers, edit values/labels as needed -->
+      <line x1="76" y1="576" x2="380" y2="576" stroke="rgba(255,255,255,0.06)" stroke-width="1" opacity="0"><animate attributeName="opacity" to="1" begin="1.2s" dur="0.5s" fill="freeze"/></line>
+      <g transform="translate(228,624)" text-anchor="middle" opacity="0">
+        <animate attributeName="opacity" to="1" begin="1.3s" dur="0.6s" fill="freeze"/>
+        <g transform="translate(-108,0)">
+          <text y="0" font-size="22" font-weight="700" fill="url(#accentGrad)">12+</text>
+          <text y="20" font-size="10" fill="#475569" letter-spacing="1">REPOS</text>
+        </g>
+        <line x1="-36" y1="-18" x2="-36" y2="16" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+        <g transform="translate(0,0)">
+          <text y="0" font-size="22" font-weight="700" fill="url(#accentGrad)">5&#9733;</text>
+          <text y="20" font-size="10" fill="#475569" letter-spacing="1">HACKERRANK</text>
+        </g>
+        <line x1="72" y1="-18" x2="72" y2="16" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+        <g transform="translate(108,0)">
+          <text y="0" font-size="22" font-weight="700" fill="url(#accentGrad)">100+</text>
+          <text y="20" font-size="10" fill="#475569" letter-spacing="1">DSA SOLVED</text>
+        </g>
+      </g>
+      <line x1="76" y1="672" x2="380" y2="672" stroke="rgba(255,255,255,0.06)" stroke-width="1" opacity="0"><animate attributeName="opacity" to="1" begin="1.4s" dur="0.5s" fill="freeze"/></line>
+
+      <g transform="translate(228,754)" opacity="0">
+        <animate attributeName="opacity" to="1" begin="1.5s" dur="0.6s" fill="freeze"/>
+        <rect x="-96" y="-16" width="192" height="32" rx="16" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1"/>
+        <circle cx="-72" cy="0" r="4" fill="#10B981"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+        <text x="-58" y="4.5" font-size="11.5" fill="#0F172A" letter-spacing="0.5">OPEN TO OPPORTUNITIES</text>
+      </g>
+
       <g stroke="url(#accentGrad)" stroke-width="1.6" fill="none" opacity="0.5">
         <path d="M50 56 h18 M50 56 v18"/>
         <path d="M406 56 h-18 M406 56 v18"/>
-        <path d="M50 554 h18 M50 554 v-18"/>
-        <path d="M406 554 h-18 M406 554 v-18"/>
+        <path d="M50 864 h18 M50 864 v-18"/>
+        <path d="M406 864 h-18 M406 864 v-18"/>
       </g>
     </g>
   </g>
 
-  <!-- ================= RIGHT PANEL : TERMINAL ================= -->
+  <!-- ================= RIGHT PANEL ================= -->
   <g>
-    <rect x="452" y="26" width="702" height="558" rx="20" fill="url(#panelFill)" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
-    <rect x="452" y="26" width="702" height="558" rx="20" fill="url(#glassReflect)"/>
+    <rect x="452" y="26" width="702" height="868" rx="20" fill="url(#panelFill)" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+    <rect x="452" y="26" width="702" height="868" rx="20" fill="url(#glassReflect)"/>
 
     <g clip-path="url(#rightPanelClip)">
-      <!-- title bar -->
       <rect x="452" y="26" width="702" height="38" fill="#E9EEF5" opacity="0.7"/>
       <line x1="452" y1="64" x2="1154" y2="64" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
       <circle cx="480" cy="45" r="6" fill="#FF5F57"/>
@@ -214,54 +186,30 @@
       <circle cx="520" cy="45" r="6" fill="#28C840"/>
       <text x="803" y="49.5" font-size="12.5" fill="#475569" text-anchor="middle" letter-spacing="0.5">purna@dev-machine: ~/portfolio</text>
 
-      <!-- scanline sweep right -->
-      <rect x="452" y="64" width="702" height="6" fill="#2563EB" opacity="0.10">
-        <animate attributeName="y" values="64;576;64" dur="6.5s" repeatCount="indefinite"/>
-      </rect>
+      <rect x="452" y="64" width="702" height="6" fill="#2563EB" opacity="0.10"><animate attributeName="y" values="64;886;64" dur="6.8s" repeatCount="indefinite"/></rect>
 
-      <!-- greeting -->
       <g transform="translate(486,102)" font-size="16" font-weight="600">
-        <text fill="#475569">&gt;<tspan fill="#0F172A"> Hi 👋, I'm </tspan><tspan fill="url(#accentGrad)" font-weight="700">Purna Tejeshwara Reddy</tspan></text>
+        <text fill="#475569">&gt;<tspan fill="#0F172A"> Hi, I'm </tspan><tspan fill="url(#accentGrad)" font-weight="700">Purna Tejeshwara Reddy</tspan></text>
       </g>
 
-      <!-- rotating role - typewriter via clip width -->
       <g transform="translate(486,134)">
         <text font-size="20" font-weight="700" fill="#06B6D4">$&#160;</text>
         <g transform="translate(24,0)">
-          <clipPath id="tw1"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite"
-            values="0;0;175;175;175;175;0;0;0;0;0" keyTimes="0;0;0.05;0.16;0.18;0.19;0.2;0.4;0.6;0.8;1"/></rect></clipPath>
-          <g opacity="0" clip-path="url(#tw1)">
-            <animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;1;1;0;0;0;0" keyTimes="0;0.001;0.19;0.2;0.4;0.6;1"/>
-            <text font-size="18.5" font-weight="600" fill="#0F172A">AI / ML Engineer</text>
-          </g>
-
-          <clipPath id="tw2"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite"
-            values="0;0;0;0;220;220;220;220;0;0;0" keyTimes="0;0.19;0.2;0.21;0.36;0.38;0.39;0.4;0.41;0.6;1"/></rect></clipPath>
-          <g opacity="0" clip-path="url(#tw2)">
-            <animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.2;0.201;0.4;0.401;1"/>
-            <text font-size="18.5" font-weight="600" fill="#0F172A">Computer Vision Developer</text>
-          </g>
-
-          <clipPath id="tw3"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite"
-            values="0;0;0;0;185;185;185;185;0;0;0" keyTimes="0;0.4;0.41;0.42;0.56;0.58;0.59;0.6;0.61;0.8;1"/></rect></clipPath>
-          <g opacity="0" clip-path="url(#tw3)">
-            <animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.4;0.401;0.6;0.601;1"/>
-            <text font-size="18.5" font-weight="600" fill="#0F172A">Full-Stack Developer</text>
-          </g>
-
-          <clipPath id="tw4"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite"
-            values="0;0;0;0;195;195;195;195;0;0;0" keyTimes="0;0.6;0.61;0.62;0.76;0.78;0.79;0.8;0.81;0.9;1"/></rect></clipPath>
-          <g opacity="0" clip-path="url(#tw4)">
-            <animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.6;0.601;0.8;0.801;1"/>
-            <text font-size="18.5" font-weight="600" fill="#0F172A">Open-Source Contributor</text>
-          </g>
-
-          <clipPath id="tw5"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite"
-            values="0;0;0;0;150;150;150;150;0" keyTimes="0;0.8;0.81;0.82;0.96;0.98;0.99;1;1"/></rect></clipPath>
-          <g opacity="0" clip-path="url(#tw5)">
-            <animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.8;0.801;1;1"/>
-            <text font-size="18.5" font-weight="600" fill="#0F172A">DSA &amp; DevOps Enthusiast</text>
-          </g>
+          <clipPath id="tw1"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;175;175;175;175;0;0;0;0;0" keyTimes="0;0;0.05;0.16;0.18;0.19;0.2;0.4;0.6;0.8;1"/></rect></clipPath>
+          <g opacity="0" clip-path="url(#tw1)"><animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;1;1;0;0;0;0" keyTimes="0;0.001;0.19;0.2;0.4;0.6;1"/>
+            <text font-size="18.5" font-weight="600" fill="#0F172A">AI / ML Engineer</text></g>
+          <clipPath id="tw2"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;0;0;220;220;220;220;0;0;0" keyTimes="0;0.19;0.2;0.21;0.36;0.38;0.39;0.4;0.41;0.6;1"/></rect></clipPath>
+          <g opacity="0" clip-path="url(#tw2)"><animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.2;0.201;0.4;0.401;1"/>
+            <text font-size="18.5" font-weight="600" fill="#0F172A">Computer Vision Developer</text></g>
+          <clipPath id="tw3"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;0;0;185;185;185;185;0;0;0" keyTimes="0;0.4;0.41;0.42;0.56;0.58;0.59;0.6;0.61;0.8;1"/></rect></clipPath>
+          <g opacity="0" clip-path="url(#tw3)"><animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.4;0.401;0.6;0.601;1"/>
+            <text font-size="18.5" font-weight="600" fill="#0F172A">Full-Stack Developer</text></g>
+          <clipPath id="tw4"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;0;0;195;195;195;195;0;0;0" keyTimes="0;0.6;0.61;0.62;0.76;0.78;0.79;0.8;0.81;0.9;1"/></rect></clipPath>
+          <g opacity="0" clip-path="url(#tw4)"><animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.6;0.601;0.8;0.801;1"/>
+            <text font-size="18.5" font-weight="600" fill="#0F172A">Open-Source Contributor</text></g>
+          <clipPath id="tw5"><rect x="0" y="-18" height="26"><animate attributeName="width" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;0;0;150;150;150;150;0" keyTimes="0;0.8;0.81;0.82;0.96;0.98;0.99;1;1"/></rect></clipPath>
+          <g opacity="0" clip-path="url(#tw5)"><animate attributeName="opacity" begin="0s" dur="20s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.8;0.801;1;1"/>
+            <text font-size="18.5" font-weight="600" fill="#0F172A">DSA &amp; DevOps Enthusiast</text></g>
         </g>
         <rect x="24" y="-16" width="9" height="22" fill="#06B6D4" filter="url(#softGlow)">
           <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/>
@@ -271,119 +219,198 @@
         </rect>
       </g>
 
-      <!-- info list -->
+      <line x1="486" y1="156" x2="1120" y2="156" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0"><animate attributeName="opacity" to="1" begin="4.0s" dur="0.5s" fill="freeze"/></line>
+
+      <!-- INFO LIST — vector icons, no emoji -->
       <g font-size="13.5" fill="#0F172A">
-        <g transform="translate(486,182)" opacity="0"><animate attributeName="opacity" to="1" begin="4.3s" dur="0.5s" fill="freeze"/>
-          <text fill="url(#accentGrad)" font-weight="700">📍</text><text x="22" fill="#475569">Location</text><text x="130" fill="#0F172A">Phagwara, Punjab, India</text></g>
-        <g transform="translate(486,206)" opacity="0"><animate attributeName="opacity" to="1" begin="4.7s" dur="0.5s" fill="freeze"/>
-          <text fill="url(#accentGrad)" font-weight="700">🎓</text><text x="22" fill="#475569">Education</text><text x="130" fill="#0F172A">B.Tech CSE, LPU &#183; CGPA 6.61</text></g>
-        <g transform="translate(486,230)" opacity="0"><animate attributeName="opacity" to="1" begin="5.1s" dur="0.5s" fill="freeze"/>
-          <text fill="url(#accentGrad)" font-weight="700">⚡</text><text x="22" fill="#475569">Focus</text><text x="130" fill="#0F172A">AI/ML &#183; Computer Vision &#183; DevOps</text></g>
-        <g transform="translate(486,254)" opacity="0"><animate attributeName="opacity" to="1" begin="5.5s" dur="0.5s" fill="freeze"/>
-          <text fill="url(#accentGrad)" font-weight="700">🔗</text><text x="22" fill="#475569">GitHub</text><text x="130" fill="#0F172A">github.com/Purnatejeshwarareddyb</text></g>
-        <g transform="translate(486,278)" opacity="0"><animate attributeName="opacity" to="1" begin="5.9s" dur="0.5s" fill="freeze"/>
-          <text fill="url(#accentGrad)" font-weight="700">✉</text><text x="22" fill="#475569">Email</text><text x="130" fill="#0F172A">bpurnatejeshwarareddy@gmail.com</text></g>
+        <g transform="translate(486,180)" opacity="0"><animate attributeName="opacity" to="1" begin="4.2s" dur="0.5s" fill="freeze"/>
+          <g stroke="url(#accentGrad)" stroke-width="1.6" fill="none" transform="translate(4,-8)">
+            <circle cx="0" cy="0" r="4.4"/><path d="M0,4.4 C0,10 -6,12 0,17 C6,12 0,10 0,4.4 Z" fill="none"/>
+          </g>
+          <text x="22" fill="#475569">Location</text><text x="130" fill="#0F172A">Phagwara, Punjab, India</text></g>
+
+        <g transform="translate(486,204)" opacity="0"><animate attributeName="opacity" to="1" begin="4.5s" dur="0.5s" fill="freeze"/>
+          <g stroke="url(#accentGrad)" stroke-width="1.6" fill="none" transform="translate(4,-10)">
+            <path d="M-7,0 L0,-4 L7,0 L0,4 Z"/><path d="M-4,1.6 V6.5 C-4,8.5 4,8.5 4,6.5 V1.6"/>
+          </g>
+          <text x="22" fill="#475569">Education</text><text x="130" fill="#0F172A">B.Tech CSE, LPU &#183; CGPA 6.61</text></g>
+
+        <g transform="translate(486,228)" opacity="0"><animate attributeName="opacity" to="1" begin="4.8s" dur="0.5s" fill="freeze"/>
+          <path d="M4,-16 L-3,-4 H2 L-2,8 L9,-6 H3 Z" fill="url(#accentGrad)" transform="translate(0,4)"/>
+          <text x="22" fill="#475569">Focus</text><text x="130" fill="#0F172A">AI/ML &#183; Computer Vision &#183; DevOps</text></g>
+
+        <g transform="translate(486,252)" opacity="0"><animate attributeName="opacity" to="1" begin="5.1s" dur="0.5s" fill="freeze"/>
+          <g stroke="url(#accentGrad)" stroke-width="1.6" fill="none" transform="translate(4,-8)">
+            <rect x="-7" y="-4.5" width="14" height="9" rx="4.5"/><rect x="-1.5" y="-4.5" width="7" height="9" rx="3.5"/>
+          </g>
+          <text x="22" fill="#475569">GitHub</text><text x="130" fill="#0F172A">github.com/Purnatejeshwarareddyb</text></g>
+
+        <g transform="translate(486,276)" opacity="0"><animate attributeName="opacity" to="1" begin="5.4s" dur="0.5s" fill="freeze"/>
+          <g stroke="url(#accentGrad)" stroke-width="1.5" fill="none" transform="translate(-3,-11)">
+            <rect x="0" y="0" width="16" height="11" rx="2"/><path d="M0,0.5 L8,7 L16,0.5"/>
+          </g>
+          <text x="22" fill="#475569">Email</text><text x="130" fill="#0F172A">bpurnatejeshwarareddy@gmail.com</text></g>
       </g>
 
-      <line x1="486" y1="304" x2="1120" y2="304" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0">
-        <animate attributeName="opacity" to="1" begin="6.2s" dur="0.5s" fill="freeze"/>
-      </line>
+      <line x1="486" y1="298" x2="1120" y2="298" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0"><animate attributeName="opacity" to="1" begin="5.6s" dur="0.5s" fill="freeze"/></line>
 
-      <!-- skills label -->
-      <text x="486" y="330" font-size="12.5" fill="#475569" letter-spacing="2" opacity="0">
-        <animate attributeName="opacity" to="1" begin="6.4s" dur="0.5s" fill="freeze"/>SKILLS &amp; TOOLS</text>
+      <text x="486" y="322" font-size="12.5" fill="#475569" letter-spacing="2" opacity="0"><animate attributeName="opacity" to="1" begin="5.8s" dur="0.5s" fill="freeze"/>SKILLS &amp; TOOLS</text>
 
-      <!-- skill pills -->
       <g font-size="12.5" font-weight="600" fill="#0F172A">
-        <!-- Row 1 -->
-        <g class="pill" transform="translate(486,344)" opacity="0"><animate attributeName="opacity" to="1" begin="6.6s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="60" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="30" y="18.5" text-anchor="middle">Python</text></g>
-        <g class="pill" transform="translate(552,344)" opacity="0"><animate attributeName="opacity" to="1" begin="6.68s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="90" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#06B6D4" stroke-width="1" opacity="0.9"/><text x="45" y="18.5" text-anchor="middle">TensorFlow</text></g>
-        <g class="pill" transform="translate(648,344)" opacity="0"><animate attributeName="opacity" to="1" begin="6.76s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="78" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1" opacity="0.9"/><text x="39" y="18.5" text-anchor="middle">PyTorch</text></g>
-        <g class="pill" transform="translate(732,344)" opacity="0"><animate attributeName="opacity" to="1" begin="6.84s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="70" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="35" y="18.5" text-anchor="middle">OpenCV</text></g>
-        <g class="pill" transform="translate(808,344)" opacity="0"><animate attributeName="opacity" to="1" begin="6.92s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="58" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#06B6D4" stroke-width="1" opacity="0.9"/><text x="29" y="18.5" text-anchor="middle">Flask</text></g>
-        <g class="pill" transform="translate(872,344)" opacity="0"><animate attributeName="opacity" to="1" begin="7.0s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="62" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1" opacity="0.9"/><text x="31" y="18.5" text-anchor="middle">Docker</text></g>
-        <g class="pill" transform="translate(940,344)" opacity="0"><animate attributeName="opacity" to="1" begin="7.08s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="52" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="26" y="18.5" text-anchor="middle">AWS</text></g>
-        <!-- Row 2 -->
-        <g class="pill" transform="translate(486,380)" opacity="0"><animate attributeName="opacity" to="1" begin="7.16s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="48" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#06B6D4" stroke-width="1" opacity="0.9"/><text x="24" y="18.5" text-anchor="middle">Git</text></g>
-        <g class="pill" transform="translate(542,380)" opacity="0"><animate attributeName="opacity" to="1" begin="7.24s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="70" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1" opacity="0.9"/><text x="35" y="18.5" text-anchor="middle">Jenkins</text></g>
-        <g class="pill" transform="translate(620,380)" opacity="0"><animate attributeName="opacity" to="1" begin="7.32s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="60" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="30" y="18.5" text-anchor="middle">MySQL</text></g>
-        <g class="pill" transform="translate(688,380)" opacity="0"><animate attributeName="opacity" to="1" begin="7.4s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="42" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#06B6D4" stroke-width="1" opacity="0.9"/><text x="21" y="18.5" text-anchor="middle">C</text></g>
-        <g class="pill" transform="translate(738,380)" opacity="0"><animate attributeName="opacity" to="1" begin="7.48s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="128" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1" opacity="0.9"/><text x="64" y="18.5" text-anchor="middle">Machine Learning</text></g>
-        <g class="pill" transform="translate(874,380)" opacity="0"><animate attributeName="opacity" to="1" begin="7.56s" dur="0.4s" fill="freeze"/>
-          <rect class="pillbg" width="52" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="26" y="18.5" text-anchor="middle">Linux</text></g>
+        <g transform="translate(486,336)" opacity="0"><animate attributeName="opacity" to="1" begin="6.0s" dur="0.4s" fill="freeze"/>
+          <rect width="60" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="30" y="18.5" text-anchor="middle">Python</text></g>
+        <g transform="translate(552,336)" opacity="0"><animate attributeName="opacity" to="1" begin="6.08s" dur="0.4s" fill="freeze"/>
+          <rect width="90" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#06B6D4" stroke-width="1" opacity="0.9"/><text x="45" y="18.5" text-anchor="middle">TensorFlow</text></g>
+        <g transform="translate(648,336)" opacity="0"><animate attributeName="opacity" to="1" begin="6.16s" dur="0.4s" fill="freeze"/>
+          <rect width="78" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1" opacity="0.9"/><text x="39" y="18.5" text-anchor="middle">PyTorch</text></g>
+        <g transform="translate(732,336)" opacity="0"><animate attributeName="opacity" to="1" begin="6.24s" dur="0.4s" fill="freeze"/>
+          <rect width="70" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="35" y="18.5" text-anchor="middle">OpenCV</text></g>
+        <g transform="translate(808,336)" opacity="0"><animate attributeName="opacity" to="1" begin="6.32s" dur="0.4s" fill="freeze"/>
+          <rect width="58" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#06B6D4" stroke-width="1" opacity="0.9"/><text x="29" y="18.5" text-anchor="middle">Flask</text></g>
+        <g transform="translate(872,336)" opacity="0"><animate attributeName="opacity" to="1" begin="6.4s" dur="0.4s" fill="freeze"/>
+          <rect width="62" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1" opacity="0.9"/><text x="31" y="18.5" text-anchor="middle">Docker</text></g>
+        <g transform="translate(940,336)" opacity="0"><animate attributeName="opacity" to="1" begin="6.48s" dur="0.4s" fill="freeze"/>
+          <rect width="52" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="26" y="18.5" text-anchor="middle">AWS</text></g>
+
+        <g transform="translate(486,372)" opacity="0"><animate attributeName="opacity" to="1" begin="6.56s" dur="0.4s" fill="freeze"/>
+          <rect width="48" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#06B6D4" stroke-width="1" opacity="0.9"/><text x="24" y="18.5" text-anchor="middle">Git</text></g>
+        <g transform="translate(542,372)" opacity="0"><animate attributeName="opacity" to="1" begin="6.64s" dur="0.4s" fill="freeze"/>
+          <rect width="70" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1" opacity="0.9"/><text x="35" y="18.5" text-anchor="middle">Jenkins</text></g>
+        <g transform="translate(620,372)" opacity="0"><animate attributeName="opacity" to="1" begin="6.72s" dur="0.4s" fill="freeze"/>
+          <rect width="60" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="30" y="18.5" text-anchor="middle">MySQL</text></g>
+        <g transform="translate(688,372)" opacity="0"><animate attributeName="opacity" to="1" begin="6.8s" dur="0.4s" fill="freeze"/>
+          <rect width="42" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#06B6D4" stroke-width="1" opacity="0.9"/><text x="21" y="18.5" text-anchor="middle">C</text></g>
+        <g transform="translate(738,372)" opacity="0"><animate attributeName="opacity" to="1" begin="6.88s" dur="0.4s" fill="freeze"/>
+          <rect width="128" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#10B981" stroke-width="1" opacity="0.9"/><text x="64" y="18.5" text-anchor="middle">Machine Learning</text></g>
+        <g transform="translate(874,372)" opacity="0"><animate attributeName="opacity" to="1" begin="6.96s" dur="0.4s" fill="freeze"/>
+          <rect width="52" height="28" rx="14" fill="url(#pillBgGrad)" stroke="#2563EB" stroke-width="1" opacity="0.9"/><text x="26" y="18.5" text-anchor="middle">Linux</text></g>
       </g>
 
-      <line x1="486" y1="430" x2="1120" y2="430" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0">
-        <animate attributeName="opacity" to="1" begin="7.7s" dur="0.5s" fill="freeze"/>
-      </line>
+      <line x1="486" y1="420" x2="1120" y2="420" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0"><animate attributeName="opacity" to="1" begin="7.1s" dur="0.5s" fill="freeze"/></line>
 
-      <!-- projects strip -->
-      <g opacity="0" font-size="12.5"><animate attributeName="opacity" to="1" begin="7.9s" dur="0.6s" fill="freeze"/>
-        <text x="486" y="456" fill="#475569" letter-spacing="2">RECENT WORK</text>
-        <text x="486" y="480" fill="#0F172A">&gt; Rupantara — cross-species face-gen GAN pipeline</text>
-        <text x="486" y="500" fill="#0F172A">&gt; Legal NER — multi-model entity extraction (F1 0.95)</text>
-        <text x="486" y="520" fill="#0F172A">&gt; Resume Previewer — full CI/CD DevOps pipeline</text>
+      <!-- PROJECTS — each card is a link; edit xlink:href to point at the exact repo -->
+      <text x="486" y="444" font-size="12.5" fill="#475569" letter-spacing="2" opacity="0"><animate attributeName="opacity" to="1" begin="7.3s" dur="0.5s" fill="freeze"/>FEATURED PROJECTS</text>
+
+      <g opacity="0"><animate attributeName="opacity" to="1" begin="7.5s" dur="0.6s" fill="freeze"/>
+        <!-- Card 1 -->
+        <a xlink:href="https://github.com/Purnatejeshwarareddyb?tab=repositories">
+        <g transform="translate(486,458)">
+          <rect width="202" height="172" rx="14" fill="url(#pillBgGrad)" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+          <rect x="0" y="0" width="202" height="88" rx="14" fill="#E9EEF5"/>
+          <rect x="0" y="70" width="202" height="18" fill="#E9EEF5"/>
+          <g transform="translate(101,44)" stroke="url(#accentGrad)" stroke-width="1.6" fill="none" opacity="0.85">
+            <rect x="-26" y="-18" width="52" height="36" rx="4"/>
+            <circle cx="-14" cy="-8" r="3.6"/>
+            <path d="M-26,10 L-8,-4 L4,6 L14,-2 L26,10"/>
+          </g>
+          <text x="14" y="112" font-size="12.5" font-weight="700" fill="#0F172A">Rupantara</text>
+          <text x="14" y="130" font-size="10.5" fill="#475569">Cross-species face-gen</text>
+          <text x="14" y="144" font-size="10.5" fill="#475569">GAN pipeline</text>
+          <rect x="14" y="150" width="76" height="18" rx="9" fill="none" stroke="#2563EB" stroke-width="1"/>
+          <text x="52" y="163" font-size="9.5" fill="#0F172A" text-anchor="middle">TensorFlow</text>
+        </g>
+        </a>
+
+        <!-- Card 2 -->
+        <a xlink:href="https://github.com/Purnatejeshwarareddyb?tab=repositories">
+        <g transform="translate(702,458)">
+          <rect width="202" height="172" rx="14" fill="url(#pillBgGrad)" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+          <rect x="0" y="0" width="202" height="88" rx="14" fill="#E9EEF5"/>
+          <rect x="0" y="70" width="202" height="18" fill="#E9EEF5"/>
+          <g transform="translate(101,44)" stroke="url(#accentGrad)" stroke-width="1.6" fill="none" opacity="0.85">
+            <rect x="-30" y="-20" width="60" height="14" rx="3"/>
+            <rect x="-30" y="-2" width="40" height="8" rx="2"/>
+            <rect x="-30" y="10" width="52" height="8" rx="2"/>
+          </g>
+          <text x="14" y="112" font-size="12.5" font-weight="700" fill="#0F172A">Legal NER</text>
+          <text x="14" y="130" font-size="10.5" fill="#475569">Multi-model entity</text>
+          <text x="14" y="144" font-size="10.5" fill="#475569">extraction &#183; F1 0.95</text>
+          <rect x="14" y="150" width="70" height="18" rx="9" fill="none" stroke="#06B6D4" stroke-width="1"/>
+          <text x="49" y="163" font-size="9.5" fill="#0F172A" text-anchor="middle">PyTorch</text>
+        </g>
+        </a>
+
+        <!-- Card 3 -->
+        <a xlink:href="https://github.com/Purnatejeshwarareddyb?tab=repositories">
+        <g transform="translate(918,458)">
+          <rect width="202" height="172" rx="14" fill="url(#pillBgGrad)" stroke="rgba(15,23,42,0.08)" stroke-width="1"/>
+          <rect x="0" y="0" width="202" height="88" rx="14" fill="#E9EEF5"/>
+          <rect x="0" y="70" width="202" height="18" fill="#E9EEF5"/>
+          <g transform="translate(101,44)" stroke="url(#accentGrad)" stroke-width="1.6" fill="none" opacity="0.85">
+            <circle cx="-16" cy="-6" r="10"/>
+            <circle cx="10" cy="6" r="10"/>
+            <path d="M-16,4 V10 M10,-4 V-10 M-16,-16 h-8 M10,16 h8"/>
+          </g>
+          <text x="14" y="112" font-size="12.5" font-weight="700" fill="#0F172A">Resume CI/CD</text>
+          <text x="14" y="130" font-size="10.5" fill="#475569">End-to-end DevOps</text>
+          <text x="14" y="144" font-size="10.5" fill="#475569">deployment pipeline</text>
+          <rect x="14" y="150" width="60" height="18" rx="9" fill="none" stroke="#10B981" stroke-width="1"/>
+          <text x="44" y="163" font-size="9.5" fill="#0F172A" text-anchor="middle">Jenkins</text>
+        </g>
+        </a>
       </g>
 
-      <!-- social icons -->
-      <g transform="translate(486,556)" opacity="0">
-        <animate attributeName="opacity" to="1" begin="8.3s" dur="0.6s" fill="freeze"/>
+      <line x1="486" y1="654" x2="1120" y2="654" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0"><animate attributeName="opacity" to="1" begin="8.4s" dur="0.5s" fill="freeze"/></line>
 
-        <!-- GitHub -->
-        <g transform="translate(0,0)" filter="url(#softGlow)">
-          <circle r="17" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.2"/>
-          <path transform="translate(-9,-9) scale(0.75)" fill="#0F172A" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.3.1 1.9 1.3 1.9 1.3 1.1 1.9 3 1.4 3.7 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/>
-        </g>
-        <text x="0" y="34" font-size="10.5" fill="#475569" text-anchor="middle">GitHub</text>
+      <!-- CONTRIBUTION ACTIVITY (decorative scatter — for live data see README notes) -->
+      <text x="486" y="678" font-size="12.5" fill="#475569" letter-spacing="2" opacity="0"><animate attributeName="opacity" to="1" begin="8.6s" dur="0.5s" fill="freeze"/>CONTRIBUTION ACTIVITY</text>
 
-        <!-- LinkedIn -->
-        <g transform="translate(64,0)" filter="url(#softGlow)">
-          <circle r="17" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.2"/>
-          <g transform="translate(-8,-8) scale(0.032)">
-            <path fill="#0F172A" d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.2 107 0 82.7 0 53.6a53.6 53.6 0 01107.2 0C107.2 82.7 83 107 53.84 107zM447.9 448h-92.68V302.4c0-34.7-.7-79.3-48.3-79.3-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/>
-          </g>
-        </g>
-        <text x="64" y="34" font-size="10.5" fill="#475569" text-anchor="middle">LinkedIn</text>
-
-        <!-- Twitter/X -->
-        <g transform="translate(128,0)" filter="url(#softGlow)">
-          <circle r="17" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.2"/>
-          <g transform="translate(-7,-7) scale(0.03)">
-            <path fill="#0F172A" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/>
-          </g>
-        </g>
-        <text x="128" y="34" font-size="10.5" fill="#475569" text-anchor="middle">Twitter</text>
-
-        <!-- Portfolio -->
-        <g transform="translate(192,0)" filter="url(#softGlow)">
-          <circle r="17" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.2"/>
-          <g transform="translate(-9,-9)" stroke="#0F172A" stroke-width="1.6" fill="none">
-            <circle cx="9" cy="9" r="7.6"/>
-            <path d="M1.5 9h15M9 1.5c2.6 2 4 4.7 4 7.5s-1.4 5.5-4 7.5M9 1.5c-2.6 2-4 4.7-4 7.5s1.4 5.5 4 7.5"/>
-          </g>
-        </g>
-        <text x="192" y="34" font-size="10.5" fill="#475569" text-anchor="middle">Portfolio</text>
-
-        <!-- pulse glow ring anim -->
-        <circle cx="0" cy="0" r="17" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.5">
-          <animate attributeName="r" values="17;23;17" dur="2.4s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite"/>
-        </circle>
+      <g transform="translate(486,692)" opacity="0">
+        <animate attributeName="opacity" to="1" begin="8.8s" dur="0.7s" fill="freeze"/>
+        <rect x="0" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="0" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="0" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="0" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="0" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="0" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"><animate attributeName="opacity" values="0.9;0.55;0.9" dur="3.28s" begin="0.09s" repeatCount="indefinite"/></rect><rect x="0" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="13" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="13" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="13" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="13" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="13" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="13" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="13" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="26" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"><animate attributeName="opacity" values="0.62;0.27;0.62" dur="3.89s" begin="2.09s" repeatCount="indefinite"/></rect><rect x="26" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="26" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="26" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"><animate attributeName="opacity" values="0.9;0.55;0.9" dur="2.75s" begin="0.29s" repeatCount="indefinite"/></rect><rect x="26" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="26" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="26" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="39" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="39" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="39" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="39" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="39" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="39" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="39" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="52" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="52" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="52" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="52" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="52" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="52" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="52" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="65" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="65" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="65" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="65" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="65" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="65" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="65" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"><animate attributeName="opacity" values="0.62;0.27;0.62" dur="3.21s" begin="2.97s" repeatCount="indefinite"/></rect><rect x="78" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="78" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="78" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="78" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="78" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="78" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="78" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="91" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="91" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="91" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="91" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="91" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="91" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="91" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="104" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="104" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="104" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="104" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="104" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="104" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="104" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="117" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="117" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="117" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="117" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="117" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="117" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="117" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="130" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="130" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="130" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="130" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="130" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="130" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="130" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="143" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="143" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="143" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="143" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="143" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="143" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="143" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="156" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="156" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="156" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="156" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="156" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="156" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="156" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="169" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="169" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="169" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="169" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="169" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="169" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"><animate attributeName="opacity" values="0.62;0.27;0.62" dur="2.69s" begin="2.63s" repeatCount="indefinite"/></rect><rect x="169" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"><animate attributeName="opacity" values="0.9;0.55;0.9" dur="3.38s" begin="0.21s" repeatCount="indefinite"/></rect><rect x="182" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="182" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="182" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="182" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="182" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="182" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="182" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="195" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="195" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"><animate attributeName="opacity" values="0.62;0.27;0.62" dur="3.1s" begin="2.99s" repeatCount="indefinite"/></rect><rect x="195" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="195" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="195" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="195" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="195" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="208" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="208" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="208" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="208" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="208" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="208" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="208" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="221" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="221" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="221" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="221" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="221" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="221" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="221" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="234" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="234" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="234" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="234" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="234" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="234" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="234" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="247" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="247" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"><animate attributeName="opacity" values="0.9;0.55;0.9" dur="3.24s" begin="1.02s" repeatCount="indefinite"/></rect><rect x="247" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"><animate attributeName="opacity" values="0.62;0.27;0.62" dur="2.9s" begin="1.35s" repeatCount="indefinite"/></rect><rect x="247" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="247" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="247" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="247" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="260" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="260" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="260" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="260" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="260" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"><animate attributeName="opacity" values="0.62;0.27;0.62" dur="3.38s" begin="0.64s" repeatCount="indefinite"/></rect><rect x="260" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="260" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="273" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="273" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="273" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="273" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="273" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="273" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="273" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="286" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="286" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="286" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="286" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="286" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="286" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="286" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="299" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="299" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="299" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="299" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="299" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="299" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="299" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="312" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="312" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="312" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="312" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="312" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="312" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="312" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="325" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="325" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="325" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="325" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="325" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="325" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="325" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="338" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="338" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="338" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="338" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="338" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="338" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="338" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="351" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="351" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="351" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="351" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="351" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="351" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="351" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="364" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="364" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="364" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="364" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="364" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="364" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="364" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="377" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="377" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="377" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="377" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="377" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="377" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="377" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="390" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="390" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="390" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="390" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="390" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="390" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="390" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="403" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="403" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="403" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="403" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="403" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="403" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="403" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="416" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="416" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="416" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="416" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="416" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="416" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="416" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="429" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="429" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="429" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="429" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="429" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="429" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="429" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="442" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="442" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="442" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="442" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="442" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="442" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="442" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="455" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="455" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="455" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="455" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="455" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="455" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="455" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="468" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="468" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="468" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="468" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="468" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="468" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="468" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="481" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="481" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="481" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="481" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="481" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="481" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="481" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="494" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="494" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="494" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="494" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="494" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="494" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="494" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="507" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="507" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="507" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="507" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="507" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="507" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="507" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="520" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="520" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="520" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="520" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="520" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="520" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="520" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="533" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="533" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="533" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="533" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="533" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="533" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="533" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="546" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="546" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="546" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="546" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="546" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="546" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="546" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="559" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="559" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="559" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="559" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="559" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="559" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="559" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="572" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="572" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="572" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="572" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="572" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="572" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="572" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="585" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="585" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="585" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="585" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="585" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="585" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="585" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="598" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="598" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="598" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="598" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="598" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="598" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="598" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="611" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="611" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="611" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="611" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="611" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="611" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="611" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="624" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="624" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="624" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="624" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="624" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="624" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="624" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.9"></rect><rect x="637" y="0" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect><rect x="637" y="13" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="637" y="26" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.06"></rect><rect x="637" y="39" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="637" y="52" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.38"></rect><rect x="637" y="65" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.18"></rect><rect x="637" y="78" width="10" height="10" rx="2.5" fill="url(#heatFill)" opacity="0.62"></rect>
       </g>
 
-      <!-- corner brackets right -->
+      <line x1="486" y1="800" x2="1120" y2="800" stroke="rgba(15,23,42,0.08)" stroke-width="1" opacity="0"><animate attributeName="opacity" to="1" begin="9.2s" dur="0.5s" fill="freeze"/></line>
+
+      <!-- SOCIAL — unique geometric badges, each wrapped in a link -->
+      <g transform="translate(486,826)" opacity="0">
+        <animate attributeName="opacity" to="1" begin="9.4s" dur="0.6s" fill="freeze"/>
+
+        <a xlink:href="https://github.com/Purnatejeshwarareddyb">
+        <g transform="translate(20,0)">
+          <path d="M20,-20 L36,-8 V8 L20,20 L4,8 V-8 Z" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.3" filter="url(#softGlow)"/>
+          <text x="20" y="6" font-size="13" font-weight="700" fill="#0F172A" text-anchor="middle">{ }</text>
+        </g>
+        </a>
+        <text x="20" y="46" font-size="10" fill="#475569" text-anchor="middle">Code</text>
+
+        <a xlink:href="https://www.linkedin.com/in/purna-t-reddy56/">
+        <g transform="translate(96,0)">
+          <path d="M20,-20 L36,-8 V8 L20,20 L4,8 V-8 Z" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.3" filter="url(#softGlow)"/>
+          <text x="20" y="6" font-size="12" font-weight="700" fill="#0F172A" text-anchor="middle">in</text>
+        </g>
+        </a>
+        <text x="96" y="46" font-size="10" fill="#475569" text-anchor="middle">Network</text>
+
+        <a xlink:href="#">
+        <g transform="translate(172,0)">
+          <path d="M20,-20 L36,-8 V8 L20,20 L4,8 V-8 Z" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.3" filter="url(#softGlow)"/>
+          <text x="20" y="6" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">@</text>
+        </g>
+        </a>
+        <text x="172" y="46" font-size="10" fill="#475569" text-anchor="middle">Social</text>
+
+        <a xlink:href="#">
+        <g transform="translate(248,0)">
+          <path d="M20,-20 L36,-8 V8 L20,20 L4,8 V-8 Z" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.3" filter="url(#softGlow)"/>
+          <g stroke="#0F172A" stroke-width="1.3" fill="none" transform="translate(20,0)">
+            <circle r="9"/><ellipse rx="4" ry="9"/><line x1="-9" y1="0" x2="9" y2="0"/>
+          </g>
+        </g>
+        </a>
+        <text x="248" y="46" font-size="10" fill="#475569" text-anchor="middle">Portfolio</text>
+
+        <a xlink:href="mailto:bpurnatejeshwarareddy@gmail.com">
+        <g transform="translate(324,0)">
+          <path d="M20,-20 L36,-8 V8 L20,20 L4,8 V-8 Z" fill="url(#pillBgGrad)" stroke="url(#accentGrad)" stroke-width="1.3" filter="url(#softGlow)"/>
+          <g stroke="#0F172A" stroke-width="1.3" fill="none" transform="translate(11,-6)">
+            <rect x="0" y="0" width="18" height="12" rx="1.5"/><path d="M0,0.5 L9,7.5 L18,0.5"/>
+          </g>
+        </g>
+        </a>
+        <text x="324" y="46" font-size="10" fill="#475569" text-anchor="middle">Email</text>
+      </g>
+
       <g stroke="url(#accentGrad)" stroke-width="1.6" fill="none" opacity="0.4">
         <path d="M470 82 h16 M470 82 v16"/>
         <path d="M1136 82 h-16 M1136 82 v16"/>
