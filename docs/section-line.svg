@@ -1,3 +1,220 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="2" viewBox="0 0 100 2" preserveAspectRatio="none" fill="none">
-  <line x1="0" y1="1" x2="100" y2="1" stroke="#89E7E2" stroke-opacity=".18" stroke-dasharray="2 3"/>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="100%"
+     height="42"
+     viewBox="0 0 1010 42"
+     preserveAspectRatio="none"
+     fill="none">
+
+  <defs>
+
+    <linearGradient id="flowGradient"
+                    x1="0"
+                    y1="0"
+                    x2="1010"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse">
+
+      <stop offset="0"
+            stop-color="#89E7E2"
+            stop-opacity="0"/>
+
+      <stop offset=".18"
+            stop-color="#89E7E2"
+            stop-opacity=".45"/>
+
+      <stop offset=".5"
+            stop-color="#80B7FF"
+            stop-opacity=".8"/>
+
+      <stop offset=".82"
+            stop-color="#8CEBA8"
+            stop-opacity=".45"/>
+
+      <stop offset="1"
+            stop-color="#8CEBA8"
+            stop-opacity="0"/>
+
+    </linearGradient>
+
+
+    <filter id="nodeGlow"
+            x="-200%"
+            y="-200%"
+            width="500%"
+            height="500%">
+
+      <feGaussianBlur
+        stdDeviation="2"
+        result="blur"/>
+
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+
+    </filter>
+
+  </defs>
+
+
+  <!-- LEFT DATA FLOW -->
+
+  <line
+    x1="0"
+    y1="21"
+    x2="400"
+    y2="21"
+    stroke="url(#flowGradient)"
+    stroke-width="1"
+  />
+
+
+  <!-- RIGHT INTELLIGENCE FLOW -->
+
+  <line
+    x1="610"
+    y1="21"
+    x2="1010"
+    y2="21"
+    stroke="url(#flowGradient)"
+    stroke-width="1"
+  />
+
+
+  <!-- DATA NODE -->
+
+  <circle
+    cx="150"
+    cy="21"
+    r="3"
+    fill="#89E7E2"
+    filter="url(#nodeGlow)"
+  />
+
+  <circle
+    cx="150"
+    cy="21"
+    r="7"
+    stroke="#89E7E2"
+    stroke-opacity=".22"
+  />
+
+
+  <!-- MODEL NODE -->
+
+  <circle
+    cx="505"
+    cy="21"
+    r="6"
+    fill="#80B7FF"
+    filter="url(#nodeGlow)"
+  />
+
+  <circle
+    cx="505"
+    cy="21"
+    r="12"
+    stroke="#80B7FF"
+    stroke-opacity=".25"
+  />
+
+  <circle
+    cx="505"
+    cy="21"
+    r="18"
+    stroke="#80B7FF"
+    stroke-opacity=".08"
+  />
+
+
+  <!-- OUTPUT NODE -->
+
+  <circle
+    cx="860"
+    cy="21"
+    r="3"
+    fill="#8CEBA8"
+    filter="url(#nodeGlow)"
+  />
+
+  <circle
+    cx="860"
+    cy="21"
+    r="7"
+    stroke="#8CEBA8"
+    stroke-opacity=".22"
+  />
+
+
+  <!-- MEANINGFUL LABELS -->
+
+  <text
+    x="150"
+    y="9"
+    text-anchor="middle"
+    fill="#54717D"
+    font-family="monospace"
+    font-size="8"
+    letter-spacing="2">
+
+    DATA
+
+  </text>
+
+
+  <text
+    x="505"
+    y="9"
+    text-anchor="middle"
+    fill="#80B7FF"
+    font-family="monospace"
+    font-size="8"
+    letter-spacing="2">
+
+    MODEL
+
+  </text>
+
+
+  <text
+    x="860"
+    y="9"
+    text-anchor="middle"
+    fill="#54717D"
+    font-family="monospace"
+    font-size="8"
+    letter-spacing="2">
+
+    IMPACT
+
+  </text>
+
+
+  <!-- DIRECTION ARROWS -->
+
+  <path
+    d="M365 18L372 21L365 24"
+    stroke="#89E7E2"
+    stroke-opacity=".55"
+    stroke-width="1"
+    fill="none"
+  />
+
+  <path
+    d="M638 18L645 21L638 24"
+    stroke="#8CEBA8"
+    stroke-opacity=".55"
+    stroke-width="1"
+    fill="none"
+  />
+
+
+  <!-- SUBTLE DATA PARTICLES -->
+
+  <circle cx="260" cy="21" r="1.5" fill="#89E7E2" opacity=".45"/>
+  <circle cx="330" cy="21" r="1.2" fill="#89E7E2" opacity=".25"/>
+
+  <circle cx="680" cy="21" r="1.5" fill="#8CEBA8" opacity=".35"/>
+  <circle cx="760" cy="21" r="1.2" fill="#8CEBA8" opacity=".25"/>
+
 </svg>
