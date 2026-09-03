@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1010" height="90" viewBox="0 0 1010 90" fill="none">
+  <defs>
+    <linearGradient id="fbar" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#89E7E2"/><stop offset=".5" stop-color="#80B7FF"/><stop offset="1" stop-color="#8CEBA8"/></linearGradient>
+  </defs>
+  <rect width="1010" height="90" rx="14" fill="#0A1620" stroke="#89E7E2" stroke-opacity=".15"/>
+  <rect x="24" y="36" width="120" height="3" rx="1.5" fill="url(#fbar)"/>
+  <text x="24" y="30" fill="#76DFE3" font-family="monospace" font-size="12" letter-spacing="3">END OF TRANSMISSION</text>
+  <text x="24" y="64" fill="#9AADB6" font-family="sans-serif" font-size="14">Designed for intelligence, built with intent.</text>
+  <text x="986" y="64" text-anchor="end" fill="#54717D" font-family="monospace" font-size="12" letter-spacing="2">© 2026 Purna Tejeshwara Reddy · PTR.AI</text>
+</svg>

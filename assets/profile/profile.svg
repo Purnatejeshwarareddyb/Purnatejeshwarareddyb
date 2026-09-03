@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="510" height="510" viewBox="0 0 510 510" fill="none">
+  <defs>
+    <linearGradient id="frame" x1="25" y1="25" x2="485" y2="485" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#89E7E2"/><stop offset=".52" stop-color="#80B7FF"/><stop offset="1" stop-color="#8CEBA8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(255 235) rotate(90) scale(190)">
+      <stop stop-color="#89E7E2" stop-opacity=".12"/><stop offset="1" stop-color="#89E7E2" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#89E7E2" stroke-opacity=".12"/></pattern>
+  </defs>
+  <rect width="510" height="510" rx="24" fill="#0A1620"/>
+  <rect x="16" y="16" width="478" height="478" rx="16" fill="url(#grid)"/>
+  <rect x="24" y="24" width="462" height="462" rx="12" stroke="url(#frame)" stroke-opacity=".55" stroke-dasharray="7 9"/>
+  <circle cx="255" cy="218" r="190" fill="url(#glow)"/>
+  <circle cx="255" cy="192" r="60" stroke="#A7C2CF" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M135 354C139 283 189 246 255 246C321 246 371 283 375 354" stroke="#A7C2CF" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M73 94H112M73 94V133M437 94H398M437 94V133M73 416H112M73 416V377M437 416H398M437 416V377" stroke="#89E7E2" stroke-width="2"/>
+  <text x="255" y="408" text-anchor="middle" fill="#7D9BA7" font-family="monospace" font-size="13" letter-spacing="3">ADD YOUR PHOTO HERE</text>
+  <text x="255" y="438" text-anchor="middle" fill="#54717D" font-family="monospace" font-size="10" letter-spacing="2">PNG / JPG / WEBP · 1:1</text>
+</svg>
